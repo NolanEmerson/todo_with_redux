@@ -14,7 +14,11 @@ class List extends Component{
     render(){
         
         const itemElements = this.props.list.map((item, index)=>{
-            return <li className='collection-item' key={index}>{item.title}</li>
+            return (
+                <li className='collection-item' key={index}>
+                    <Link to={`/item/${item._id}`}>{item.title}</Link>
+                </li>
+            )
         });
 
         const style = {
